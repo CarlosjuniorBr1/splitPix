@@ -1,1 +1,1 @@
-# splitPix
+# Split - Pix 🪙
