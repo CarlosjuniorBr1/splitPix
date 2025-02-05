@@ -1,6 +1,6 @@
 package com.example.splitpix.Enum;
 
-public enum StatusPagamento {
+public enum StatusPayment {
     PENDENTE,
     CONFIRMADO
 }
