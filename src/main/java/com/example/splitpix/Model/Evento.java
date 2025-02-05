@@ -27,7 +27,7 @@ public class Evento {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private StatusEvento status;
+    private StatusEvento status = StatusEvento.ATIVO;
 
 
     public Long getId() {
@@ -68,5 +68,13 @@ public class Evento {
 
     public void setLinkUnico(String linkUnico) {
         this.linkUnico = linkUnico;
+    }
+
+    public StatusEvento getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEvento status) {
+        this.status = status;
     }
 }
