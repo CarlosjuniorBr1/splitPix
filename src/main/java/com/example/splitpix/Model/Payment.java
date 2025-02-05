@@ -1,12 +1,11 @@
 package com.example.splitpix.Model;
 
-import com.example.splitpix.Enum.StatusEvento;
-import com.example.splitpix.Enum.StatusPagamento;
+import com.example.splitpix.Enum.StatusPayment;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "pagamento")
-public class Pagamento {
+public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +13,7 @@ public class Pagamento {
 
     @ManyToOne
     @JoinColumn(name = "evento_id", nullable = false)
-    private Evento evento;
+    private Event event;
 
     @Column(nullable = false)
     private String nomePagador;
@@ -25,7 +24,7 @@ public class Pagamento {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private StatusPagamento status;
+    private StatusPayment status;
 
     public Long getId() {
         return id;
@@ -35,12 +34,12 @@ public class Pagamento {
         this.id = id;
     }
 
-    public Evento getEvento() {
-        return evento;
+    public Event getEvento() {
+        return event;
     }
 
-    public void setEvento(Evento evento) {
-        this.evento = evento;
+    public void setEvento(Event event) {
+        this.event = event;
     }
 
     public String getNomePagador() {
@@ -59,11 +58,11 @@ public class Pagamento {
         this.comprovante = comprovante;
     }
 
-    public StatusPagamento getStatus() {
+    public StatusPayment getStatus() {
         return status;
     }
 
-    public void setStatus(StatusPagamento status) {
+    public void setStatus(StatusPayment status) {
         this.status = status;
     }
 }

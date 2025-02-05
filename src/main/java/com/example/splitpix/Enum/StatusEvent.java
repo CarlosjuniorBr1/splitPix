@@ -1,6 +1,6 @@
 package com.example.splitpix.Enum;
 
-public enum StatusEvento {
+public enum StatusEvent {
     ATIVO,
     FINALIZADO
 }

@@ -1,13 +1,13 @@
 package com.example.splitpix.Model;
 
-import com.example.splitpix.Enum.StatusEvento;
+import com.example.splitpix.Enum.StatusEvent;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table (name = "evento")
-public class Evento {
+public class Event {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class Evento {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private StatusEvento status = StatusEvento.ATIVO;
+    private StatusEvent status = StatusEvent.ATIVO;
 
 
     public Long getId() {
@@ -70,11 +70,11 @@ public class Evento {
         this.linkUnico = linkUnico;
     }
 
-    public StatusEvento getStatus() {
+    public StatusEvent getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEvento status) {
+    public void setStatus(StatusEvent status) {
         this.status = status;
     }
 }
