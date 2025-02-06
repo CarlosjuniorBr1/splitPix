@@ -6,6 +6,7 @@ import com.example.splitpix.Model.Event;
 import com.example.splitpix.Repository.EventRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -54,5 +55,14 @@ public class EventoRest {
         return ResponseEntity.ok(event);
     }
 
+    @DeleteMapping("/deleteEvent/{id}")
+    public ResponseEntity<String> deleteEvent(@PathVariable Long id){
+        if(eventRepository.existsById(id)){
+            eventRepository.deleteById(id);
+            return ResponseEntity.ok("evento deletado com sucesso!");
+        }else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Evento não encontrado!");
+        }
+    }
 
 }
